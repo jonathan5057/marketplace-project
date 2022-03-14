@@ -11,6 +11,9 @@
   </head>
 
   <body>
+    <header>
+      <%= render "shared/navbar" %>
+    </header>
     <%= flash.each do |key, value|%>
       <div class="alert alert-<%=select_alert_subclass(key)%> alert-dismissible fade show" role="alert">
         <%=value%>
@@ -19,7 +22,10 @@
         </button> 
       </div>
     <%end%>
-    <%= render "shared/navbar" %>
+    
     <%= yield %>
+    <footer>
+      <%= render "shared/footer" %>
+    </footer>
   </body>
 </html>
