@@ -16,10 +16,12 @@ ActiveRecord::Schema.define(version: 2022_03_11_034652) do
   enable_extension "plpgsql"
 
   create_table "listings", force: :cascade do |t|
-    t.string "name"
+    t.string "category"
+    t.string "title"
     t.text "description"
-    t.float "price"
+    t.integer "price"
     t.boolean "sold"
+    t.datetime "datetime"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
